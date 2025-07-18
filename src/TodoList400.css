@@ -1,0 +1,153 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #e9f0f7;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.div-body {
+  width: 60vw;
+  margin-top: 80px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  text-align: center;
+  color: navy;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.div2 {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#text {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid blue;
+  border-radius: 5px;
+  outline: none;
+}
+
+.hh1{
+  color: rgb(33, 130, 241); 
+  font-size: 2em; 
+  margin-bottom: 20px; 
+  font-family:'Times New Roman', Times, serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.div-btn .btn {
+    padding: 14px 20px;
+    background-color: lightblue;
+    color: navy;
+    border: 1px solid navy;
+    border-radius: 7px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.div-btn .btn:hover {
+  background-color: #b3d9f7;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    margin-left: 45px;
+    margin-right: 97px;
+    list-style: none;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 7px;
+    text-transform: capitalize;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-details {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.complete-btn,
+.delete-btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.complete-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.complete-btn:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+#div3 {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.removebtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.removebtn button {
+  padding: 12px 24px;
+  background-color: white;
+  color: rgb(138, 13, 13);
+  border: 2px solid rgb(138, 13, 13);
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.removebtn button:hover {
+  background-color: rgb(138, 13, 13);
+  color: white;
+}
