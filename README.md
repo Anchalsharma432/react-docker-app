@@ -6,13 +6,17 @@ A simple React application containerized using Docker.
 
 ## 📚 Project Description
 
-This React app is bundled and served using Nginx through a Docker container. The goal was to learn how to containerize a frontend application and make it production-ready using Docker best practices.
+This React app is bundled and served using node through a Docker container. The goal was to learn how to containerize a frontend application and make it production-ready using Docker best practices.
 
 ---
 
 ## 📸 Screenshot
 
-![App Screenshot](../anchal_assign2/public/app_ss.png)
+(./public/app_ss.png)
+
+## Docker Desktop
+
+(./public/docker__desktop.png)
 
 ---
 
@@ -20,7 +24,6 @@ This React app is bundled and served using Nginx through a Docker container. The
 
 - ⚛️ React
 - 🐳 Docker
-- 🧅 Nginx
 - 📦 Node.js & npm
 
 ---
@@ -52,13 +55,13 @@ cd react-docker-app
 ### 2. Build Docker Image
 
 ```bash
-docker build -t react-docker-app .
+docker build -t nope-app .
 ```
 
 ### 3. Run Docker Container
 
 ```bash
-docker run -d -p 3000:80 react-docker-app
+docker run -d -p 3000:3000 nope-app:1.0
 ```
 
 ✅ Open your browser at: **http://localhost:3000**
@@ -68,20 +71,15 @@ docker run -d -p 3000:80 react-docker-app
 ## 📄 Dockerfile Overview
 
 ```Dockerfile
-# Step 1: Build the React app
-FROM node:18 AS build
+# Step 1: Serve the React app
+FROM node:19-alpine
+
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm run build
-
-# Step 2: Serve with Nginx
-FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
-```
+EXPOSE 3000
+CMD ["npm", "start"]
 
 ---
 
@@ -101,7 +99,7 @@ npm-debug.log
 ## 🙋‍♀️ Author
 
 **Anchal Sharma**  
-📧 anchal@example.com  
+📧 sharmavatts432@gmail.com  
 🔗 [GitHub Profile](https://github.com/anchalsharma432)
 
 ---
