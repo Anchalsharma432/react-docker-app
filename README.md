@@ -1,74 +1,117 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# 🚀 React + Docker App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React application containerized using Docker. This project was created as part of **Anchal Sharma's Full Stack Development coursework at Lambton College**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📚 Project Description
 
-### `npm start`
+This React app is bundled and served using Nginx through a Docker container. The goal was to learn how to containerize a frontend application and make it production-ready using Docker best practices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📸 Screenshot
 
-### `npm test`
+> _(Replace with an actual screenshot if needed)_
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![App Screenshot](https://via.placeholder.com/800x400?text=React+App+Screenshot)
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🏗️ Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- ⚛️ React
+- 🐳 Docker
+- 🧅 Nginx
+- 📦 Node.js & npm
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📂 Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+anchal_assign2/
+├── Dockerfile
+├── .dockerignore
+├── .gitignore
+├── package.json
+├── public/
+├── src/
+└── README.md
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🐳 How to Run with Docker
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1. Clone the Repo
 
-## Learn More
+```bash
+git clone https://github.com/Anchalsharma432/react-docker-app.git
+cd react-docker-app
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 2. Build Docker Image
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+docker build -t react-docker-app .
+```
 
-### Code Splitting
+### 3. Run Docker Container
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+docker run -d -p 3000:80 react-docker-app
+```
 
-### Analyzing the Bundle Size
+✅ Open your browser at: **http://localhost:3000**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 📄 Dockerfile Overview
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```Dockerfile
+# Step 1: Build the React app
+FROM node:18 AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
 
-### Advanced Configuration
+# Step 2: Serve with Nginx
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 🧾 .gitignore
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```gitignore
+node_modules
+build
+.dockerignore
+Dockerfile
+npm-debug.log
+.env
+```
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# react-docker-app
->>>>>>> 7f9a233ee5eca179f92200ed6892797561b35320
+## 🙋‍♀️ Author
+
+**Anchal Sharma**  
+📧 anchal@example.com  
+🔗 [GitHub Profile](https://github.com/Anchalsharma432)
+
+---
+
+## 🪪 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+> ✅ _This README is optimized for assignments, hackathons, or portfolio projects. Let me know if you'd like to generate a professional PDF or add deployment instructions (like Netlify, Vercel, or Docker Hub)._
