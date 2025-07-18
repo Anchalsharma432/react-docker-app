@@ -12,11 +12,11 @@ This React app is bundled and served using node through a Docker container. The 
 
 ## 📸 Screenshot
 
-(./public/app_ss.png)
+![App Screenshot](./assets/app_ss.png)
 
 ## Docker Desktop
 
-(./public/docker__desktop.png)
+![Docker Desktop](./assets/docker_desktop.png)
 
 ---
 
