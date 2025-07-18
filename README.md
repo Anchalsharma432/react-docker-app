@@ -1,6 +1,6 @@
 # 🚀 React + Docker App
 
-A simple React application containerized using Docker. This project was created as part of **Anchal Sharma's Full Stack Development coursework at Lambton College**.
+A simple React application containerized using Docker.
 
 ---
 
@@ -12,9 +12,7 @@ This React app is bundled and served using Nginx through a Docker container. The
 
 ## 📸 Screenshot
 
-> _(Replace with an actual screenshot if needed)_
-
-![App Screenshot](https://via.placeholder.com/800x400?text=React+App+Screenshot)
+![App Screenshot](../anchal_assign2/public/app_ss.png)
 
 ---
 
@@ -104,7 +102,7 @@ npm-debug.log
 
 **Anchal Sharma**  
 📧 anchal@example.com  
-🔗 [GitHub Profile](https://github.com/Anchalsharma432)
+🔗 [GitHub Profile](https://github.com/anchalsharma432)
 
 ---
 
@@ -113,5 +111,3 @@ npm-debug.log
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
-> ✅ _This README is optimized for assignments, hackathons, or portfolio projects. Let me know if you'd like to generate a professional PDF or add deployment instructions (like Netlify, Vercel, or Docker Hub)._
